@@ -92,11 +92,11 @@ const StyledHero = styled.header`
     }
   }
 `
-const typedStyles = styled.span`
+const TypedStyles = styled.span`
   span {
-    margin: 30px auto;
+    margin: 18px 0px;
     font-weight: 700;
-    font-size: 2.5em;
+    font-size: 1.5em;
   }
 `
 
@@ -118,7 +118,7 @@ const Hero = ({ name }) => {
             <h1 className='mb-3 display-3 title'>
               {name === null ? 'null' : name}
             </h1>
-            <typedStyles>
+            <TypedStyles>
               <ReactTyped
                 strings={[
                   'Fullstack Developer',
@@ -128,8 +128,8 @@ const Hero = ({ name }) => {
                 typeSpeed={100}
                 loop
               />
-            </typedStyles>
-            <div className='d-flex align-items-center justify-content-center'>
+            </TypedStyles>
+            <div className='mt-3 d-flex align-items-center justify-content-center'>
               <SocialLinks />
             </div>
           </Col>

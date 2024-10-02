@@ -10,10 +10,8 @@ import Contact from '../components/Contact'
 import BackToTop from '../components/BackToTop'
 // Config
 import { filteredProjects, moreInfo } from '../config'
-// Utils
 import { updateTitle } from '../utils'
 
-// #region component
 const Home = () => {
   const { data: userData } = useGetUsersQuery()
 
@@ -25,8 +23,9 @@ const Home = () => {
     <>
       <Hero name={userData.name} />
       <main>
+        {/* CAMBIAR AQUI LO QUE QUIERO PONER ( en bio={userData.bio} ) */}
         <AboutMe
-          avatar_url={userData.avatar_url}
+          avatarUrl={userData.avatar_url}
           bio={userData.bio}
           moreInfo={moreInfo}
         />
@@ -38,6 +37,5 @@ const Home = () => {
     </>
   )
 }
-// #endregion
 
 export default Home
