@@ -1,18 +1,19 @@
-import React from "react";
+import React from 'react'
 // Styles
-import styled, { keyframes } from "styled-components";
+import styled, { keyframes } from 'styled-components'
 // State
-import PropTypes from "prop-types";
+import PropTypes from 'prop-types'
 // Icons
-import { Icon } from "@iconify/react";
+import { Icon } from '@iconify/react'
 // Images
-import Logo from "../images/logo.svg";
-import { Light, Dark } from "../config";
+import Logo from '../images/logo.svg'
+import { Light, Dark } from '../config'
 // Components
-import { useErrorBoundary } from "react-error-boundary";
-import { Link } from "react-scroll";
-import { Button, Col, Container, Row } from "react-bootstrap";
-import SocialLinks from "./SocialLinks";
+import { useErrorBoundary } from 'react-error-boundary'
+import { Link } from 'react-scroll'
+import { Button, Col, Container, Row } from 'react-bootstrap'
+import SocialLinks from './SocialLinks'
+import { ReactTyped } from 'react-typed'
 
 // #region styled-components
 const spin = keyframes`
@@ -22,7 +23,7 @@ const spin = keyframes`
   to {
     transform: rotate(360deg);
   }
-`;
+`
 
 const StyledHero = styled.header`
   position: relative;
@@ -40,9 +41,9 @@ const StyledHero = styled.header`
     width: 100%;
     height: 100%;
     background: ${({ theme }) =>
-      theme.name === "light"
-        ? "linear-gradient(135deg, var(--bs-primary), var(--bs-light))"
-        : "linear-gradient(135deg, var(--bs-primary), var(--bs-dark))"};
+      theme.name === 'light'
+        ? 'linear-gradient(135deg, var(--bs-primary), var(--bs-light))'
+        : 'linear-gradient(135deg, var(--bs-primary), var(--bs-dark))'};
     z-index: -2;
   }
 
@@ -55,9 +56,9 @@ const StyledHero = styled.header`
     width: 100%;
     height: 100%;
     background: ${({ theme }) =>
-      theme.name === "light"
-        ? "rgba(255, 255, 255, 0.2)"
-        : "rgba(0, 0, 0, 0.2)"};
+      theme.name === 'light'
+        ? 'rgba(255, 255, 255, 0.2)'
+        : 'rgba(0, 0, 0, 0.2)'};
     z-index: -1;
   }
 
@@ -74,7 +75,7 @@ const StyledHero = styled.header`
   @media screen and (min-width: 1180px) {
     &::before {
       background: ${({ theme }) =>
-        theme.name === "light"
+        theme.name === 'light'
           ? `url(${Light}) top center fixed no-repeat`
           : `url(${Dark}) top center fixed no-repeat`};
       background-size: 100vw auto;
@@ -84,67 +85,85 @@ const StyledHero = styled.header`
   @media screen and (min-width: 1367px) {
     &::before {
       background: ${({ theme }) =>
-        theme.name === "light"
+        theme.name === 'light'
           ? `url(${Light}) center center fixed no-repeat`
           : `url(${Dark}) center center fixed no-repeat`};
       background-size: cover;
     }
   }
-`;
+`
+const typedStyles = styled.span`
+  span {
+    margin: 30px auto;
+    font-weight: 700;
+    font-size: 2.5em;
+  }
+`
+
 // #endregion
 
 // #region component
 const propTypes = {
-  name: PropTypes.string,
-};
+  name: PropTypes.string
+}
 
 const Hero = ({ name }) => {
-  const { showBoundary } = useErrorBoundary();
+  const { showBoundary } = useErrorBoundary()
 
   return (
     <StyledHero>
       <Container>
-        <Row className="align-items-center text-center">
+        <Row className='align-items-center text-center'>
           <Col>
-            <h1 className="mb-3 display-3 title">
-              {name === null ? "null" : name}
+            <h1 className='mb-3 display-3 title'>
+              {name === null ? 'null' : name}
             </h1>
-            <div className="d-flex align-items-center justify-content-center">
+            <typedStyles>
+              <ReactTyped
+                strings={[
+                  'Fullstack Developer',
+                  'Backend Developer',
+                  'Mobile/Frontend Developer'
+                ]}
+                typeSpeed={100}
+                loop
+              />
+            </typedStyles>
+            <div className='d-flex align-items-center justify-content-center'>
               <SocialLinks />
             </div>
           </Col>
-          <Col className="d-none d-md-block">
+          <Col className='d-none d-md-block'>
             <img
               src={Logo}
-              alt="React Logo"
-              className="w-75 mx-auto hero-img"
+              alt='React Logo'
+              className='w-75 mx-auto hero-img'
             />
           </Col>
         </Row>
-        <Row className="align-items-end down-container">
-          <Col className="m-4 text-center">
-            <Link to={"About"} className="link-icons">
-              <Icon icon="fa6-solid:circle-chevron-down" />
+        <Row className='align-items-end down-container'>
+          <Col className='m-4 text-center'>
+            <Link to='About' className='link-icons'>
+              <Icon icon='fa6-solid:circle-chevron-down' />
             </Link>
           </Col>
         </Row>
         <Button
-          className="d-none"
+          className='d-none'
           onClick={() =>
             showBoundary({
-              name: "Error",
-              message: "Simulated error message",
-            })
-          }
+              name: 'Error',
+              message: 'Simulated error message'
+            })}
         >
           Simulate Error Boundary
         </Button>
       </Container>
     </StyledHero>
-  );
-};
+  )
+}
 
-Hero.propTypes = propTypes;
+Hero.propTypes = propTypes
 // #endregion
 
-export default Hero;
+export default Hero
