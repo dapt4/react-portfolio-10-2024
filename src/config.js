@@ -1,5 +1,6 @@
 // Skills icons - https://icon-sets.iconify.design/
 import { Icon } from '@iconify/react'
+import me from './images/me.jpeg'
 
 // Navbar Logo image (add your image to the src/images directory and uncomment the line below to import your image)
 // import newLogo from "./images/yourFileName"
@@ -18,7 +19,7 @@ import Logo from './images/logo.svg'
 export const githubUsername = 'dapt4'
 
 // Navbar Logo image
-export const navLogo = null
+export const navLogo = me
 
 /* Main
  **************************************************************
