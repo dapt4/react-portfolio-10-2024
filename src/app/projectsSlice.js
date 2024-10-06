@@ -1,26 +1,26 @@
 // https://redux-toolkit.js.org/usage/usage-guide#simplifying-slices-with-createslice
-import { createSlice } from "@reduxjs/toolkit";
+import { createSlice } from '@reduxjs/toolkit'
 
 const initialState = {
   projects: [],
-  mainProjects: [],
-};
+  mainProjects: []
+}
 
 export const projectsSlice = createSlice({
-  name: "projects",
+  name: 'projects',
   initialState,
   reducers: {
     setProjects: (state, action) => {
-      state.projects = action.payload;
+      state.projects = action.payload
     },
     setMainProjects: (state, action) => {
-      state.mainProjects = action.payload;
-    },
-  },
-});
+      state.mainProjects = action.payload
+    }
+  }
+})
 
-export const selectProjects = (state) => state.projects.projects;
-export const selectMainProjects = (state) => state.projects.mainProjects;
-export const { setProjects, setMainProjects } = projectsSlice.actions;
+export const selectProjects = (state) => state.projects.projects
+export const selectMainProjects = (state) => state.projects.mainProjects
+export const { setProjects, setMainProjects } = projectsSlice.actions
 
-export default projectsSlice.reducer;
+export default projectsSlice.reducer

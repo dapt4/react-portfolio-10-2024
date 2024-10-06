@@ -1,14 +1,10 @@
 import React from 'react'
-// Styles
 import styled from 'styled-components'
-// State
 import PropTypes from 'prop-types'
-// Components
 import { Element } from 'react-scroll'
 import { Col, Container, Row } from 'react-bootstrap'
 import Title from './Title'
 
-// #region styled-components
 const StyledAboutMe = styled.section`
   p {
     font-size: 1.25rem;
@@ -16,11 +12,10 @@ const StyledAboutMe = styled.section`
   .img {
     width: 18rem;
     height: 18rem;
+    border-color: #ff8100;
   }
 `
-// #endregion
 
-// #region component
 const propTypes = {
   avatarUrl: PropTypes.string.isRequired,
   bio: PropTypes.string,
@@ -47,9 +42,9 @@ const AboutMe = ({ avatarUrl, bio, moreInfo }) => {
                 src={avatarUrl}
                 alt='GitHub Avatar'
                 loading='lazy'
-                className='mx-auto rounded-circle border border-primary-subtle'
+                className='mx-auto rounded-circle border border-5 bc-1'
                 style={{ width: '15rem', height: '15rem' }}
-              />
+              /> {/* border-primary-subtle */}
             </Col>
           </Row>
         </Container>
@@ -59,6 +54,5 @@ const AboutMe = ({ avatarUrl, bio, moreInfo }) => {
 }
 
 AboutMe.propTypes = propTypes
-// #endregion
 
 export default AboutMe

@@ -1,6 +1,6 @@
 // Skills icons - https://icon-sets.iconify.design/
 import { Icon } from '@iconify/react'
-import me from './images/me.jpeg'
+import meFoto from './images/me.jpeg'
 
 // Navbar Logo image (add your image to the src/images directory and uncomment the line below to import your image)
 // import newLogo from "./images/yourFileName"
@@ -10,7 +10,8 @@ import HeroLight from './images/hero-light.jpg'
 import HeroDark from './images/hero-dark.jpg'
 
 // Projects Images (add your images to the images directory and import below)
-import Logo from './images/logo.svg'
+// import Logo from './images/logo.svg'
+import GitHubImg from './images/GH.svg'
 
 /* START HERE
  **************************************************************
@@ -19,7 +20,7 @@ import Logo from './images/logo.svg'
 export const githubUsername = 'dapt4'
 
 // Navbar Logo image
-export const navLogo = me
+export const navLogo = meFoto
 
 /* Main
  **************************************************************
@@ -35,8 +36,7 @@ export { HeroDark as Dark }
  **************************************************************
   Add a second paragraph for the about me section.
 */
-export const moreInfo =
-  `I’m passionate about using technology to build efficient and scalable web 
+export const moreInfo = `I’m passionate about using technology to build efficient and scalable web 
    applications that make a real impact. My expertise spans Python and TypeScript,
    and front-end frameworks like Angular, React, and Vue. 
    On the backend, I work with Django or Node.js and Express to create robust APIs.
@@ -52,65 +52,107 @@ export const moreInfo =
 export const skillData = [
   {
     id: 1,
-    skill: <Icon icon='mdi:language-html5' className='display-4' />,
-    name: 'HTML5'
+    skill: <Icon icon='simple-icons:ionic' className='darkColor display-4' />,
+    name: 'Ionic'
   },
   {
     id: 2,
-    skill: <Icon icon='ion:logo-css3' className='display-4' />,
-    name: 'CSS3'
+    skill: <Icon icon='logos:cordova' className='darkColor display-4' />,
+    name: 'Cordova'
   },
   {
     id: 3,
-    skill: <Icon icon='fa6-brands:js' className='display-4' />,
-    name: 'JavaScript'
+    skill: <Icon icon='simple-icons:capacitor' className='darkColor display-4' />,
+    name: 'Capacitor'
   },
   {
     id: 4,
-    skill: <Icon icon='ri:bootstrap-fill' className='display-4' />,
-    name: 'BootStrap'
+    skill: <Icon icon='fa6-brands:js' className='darkColor display-4' />,
+    name: 'Javascript'
   },
   {
     id: 5,
-    skill: <Icon icon='mdi:react' className='display-4' />,
-    name: 'React'
+    skill: <Icon icon='akar-icons:typescript-fill' className='darkColor display-4' />,
+    name: 'Typescript'
   },
   {
     id: 6,
-    skill: <Icon icon='file-icons:styledcomponents' className='display-4' />,
-    name: 'Styled Components'
+    skill: <Icon icon='mdi:angular' className='darkColor display-4' />,
+    name: 'Angular'
   },
   {
     id: 7,
-    skill: <Icon icon='akar-icons:redux-fill' className='display-4' />,
-    name: 'Redux'
+    skill: <Icon icon='mdi:react' className='darkColor display-4' />,
+    name: 'React'
   },
   {
     id: 8,
-    skill: <Icon icon='bi:git' className='display-4' />,
-    name: 'Git'
+    skill: <Icon icon='carbon:logo-vue' className='darkColor display-4' />,
+    name: 'Vue'
   },
   {
     id: 9,
-    skill: <Icon icon='fa6-brands:square-github' className='display-4' />,
+    skill: <Icon icon='simple-icons:python' className='darkColor display-4' />,
+    name: 'Python'
+  },
+  {
+    id: 10,
+    skill: <Icon icon='skill-icons:django' className='darkColor display-4' />,
+    name: 'Django'
+  },
+  {
+    id: 11,
+    skill: <Icon icon='skill-icons:nodejs-dark' className='darkColor display-4' />,
+    name: 'Nodejs'
+  },
+  {
+    id: 12,
+    skill: <Icon icon='devicon:express' className='darkColor display-4' />,
+    name: 'Express'
+  },
+  {
+    id: 13,
+    skill: <Icon icon='akar-icons:redux-fill' className='darkColor display-4' />,
+    name: 'Redux'
+  },
+  {
+    id: 14,
+    skill: <Icon icon='bi:git' className='darkColor display-4' />,
+    name: 'Git'
+  },
+  {
+    id: 15,
+    skill: <Icon icon='fa6-brands:square-github' className='darkColor display-4' />,
     name: 'GitHub'
   }
 ]
 
 // Resume link (string - "https://YourResumeUrl") - I am using CloudFront to share my resume (https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/Introduction.html)
-export const resume = null
+export const resume =
+  'https://drive.google.com/file/d/1uUkcuuB1qPPbwWImYmjUXlT49DRBXBWj/view?usp=sharing'
 
 /* Projects
  **************************************************************
   List the repo names (string - "your-repo-name") you want to include (they will be sorted alphabetically). If empty, only the first 3 will be included.
 */
-export const filteredProjects = ['example-1', 'example-2', 'example-3']
+export const filteredProjects = ['react-hero-app', 'vue_sorting_hat', 'podcastapp']
 
 // Replace the defualt GitHub image for matching repos below (images imported above - lines 7-8)
 export const projectCardImages = [
   {
-    name: 'example-1',
-    image: Logo
+    name: 'react-hero-app',
+    image: GitHubImg,
+    homepage: 'https://astonishing-naiad-95d8b4.netlify.app/'
+  },
+  {
+    name: 'vue_sorting_hat',
+    image: GitHubImg,
+    homepage: 'https://vuesortinghat.netlify.app/'
+  },
+  {
+    name: 'podcastapp',
+    image: GitHubImg,
+    homepage: 'https://podcastdapt4.netlify.app/'
   }
 ]
 
@@ -119,7 +161,7 @@ export const projectCardImages = [
   Add your formspree endpoint below.
   https://formspree.io/
 */
-export const formspreeUrl = 'https://formspree.io/f/YourEndpoint'
+export const formspreeUrl = 'https://formspree.io/f/xeoqjzee'
 
 // Footer icons theme (light or dark)
 export const footerTheme = 'dark'

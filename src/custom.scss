@@ -1,6 +1,26 @@
-// https://getbootstrap.com/docs/5.3/utilities/colors/#sass-variables
-
 // Set the primary color for the theme
-$blue: #61dbfb;
+// $blue: #61dbfb;
+$blue: #ff8100;
+
 // Import Bootstrap and its default variables
 @import "~bootstrap/scss/bootstrap.scss";
+
+.darkColor {
+  path {
+    fill: #000; // lighten($color: #000000, $amount: 30)
+  }
+  &:has(g rect) {
+    g {
+      rect {
+        fill: #000;
+      }
+      path {
+        fill: #fff;
+      }
+    }
+  }
+}
+
+.bc-1 {
+  border-color: #ff8100 !important
+}

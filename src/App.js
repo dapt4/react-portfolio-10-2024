@@ -32,7 +32,8 @@ const propTypes = {
   projectCardImages: PropTypes.arrayOf(
     PropTypes.shape({
       name: PropTypes.string.isRequired,
-      image: PropTypes.node.isRequired
+      image: PropTypes.node.isRequired,
+      homepage: PropTypes.string
     })
   )
 }
@@ -73,6 +74,7 @@ const App = ({ projectCardImages = [], filteredProjects = [] }) => {
           tempData.forEach((ele) => {
             if (element.name.toLowerCase() === ele.name.toLowerCase()) {
               ele.image = element.image
+              ele.homepage = element.homepage
             }
           })
         })

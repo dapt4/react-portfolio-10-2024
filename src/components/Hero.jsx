@@ -1,27 +1,36 @@
 import React from 'react'
-// Styles
 import styled, { keyframes } from 'styled-components'
-// State
 import PropTypes from 'prop-types'
-// Icons
 import { Icon } from '@iconify/react'
-// Images
-import Logo from '../images/logo.svg'
+import react from '../images/logo.png'
+import python from '../images/python.png'
+import angular from '../images/Angular.png'
+import ionic from '../images/Ionic.png'
+import django from '../images/django.png'
+import typescript from '../images/typescript.png'
+import nodejs from '../images/node.js.png'
 import { Light, Dark } from '../config'
-// Components
 import { useErrorBoundary } from 'react-error-boundary'
 import { Link } from 'react-scroll'
 import { Button, Col, Container, Row } from 'react-bootstrap'
 import SocialLinks from './SocialLinks'
 import { ReactTyped } from 'react-typed'
+import { Fade } from 'react-slideshow-image'
+import 'react-slideshow-image/dist/styles.css'
 
 // #region styled-components
 const spin = keyframes`
-  from {
-    transform: rotate(0deg);
+  0% {
+    transform: translateX(0px);
+    opacity: 0;
   }
-  to {
-    transform: rotate(360deg);
+  50%{
+    transform: translateX(100px);
+    opacity: 1;
+  }
+  100% {
+    transform: translateX(100px);
+    opacity: 0;
   }
 `
 
@@ -68,8 +77,24 @@ const StyledHero = styled.header`
 
   @media (prefers-reduced-motion: no-preference) {
     .hero-img {
-      animation: ${spin} infinite 20s linear;
+      min-width: 200px;
+      width: 50%;
+      max-width: 300px;
+     }
+    /*.hero-img1 {
+      opacity: 0;
+      animation: ${spin} infinite 5s ease ;
     }
+    .hero-img2 {
+      opacity: 0;
+      animation: ${spin} infinite 6s ease;
+      animation-delay: 3s;
+    }
+    .hero-img3 {
+      opacity: 0;
+      animation: ${spin} infinite 7s ease;
+      animation-delay: 1.5s;
+    }*/
   }
 
   @media screen and (min-width: 1180px) {
@@ -92,6 +117,7 @@ const StyledHero = styled.header`
     }
   }
 `
+
 const TypedStyles = styled.span`
   span {
     margin: 18px 0px;
@@ -99,22 +125,27 @@ const TypedStyles = styled.span`
     font-size: 1.5em;
   }
 `
-
-// #endregion
-
-// #region component
 const propTypes = {
   name: PropTypes.string
 }
 
+const images = [
+  { url: python, caption: 'Python' },
+  { url: django, caption: 'Django' },
+  { url: ionic, caption: 'Ionic' },
+  { url: angular, caption: 'Angular' },
+  { url: typescript, caption: 'Typescript' },
+  { url: react, caption: 'React' },
+  { url: nodejs, caption: 'node.js' }
+]
+
 const Hero = ({ name }) => {
   const { showBoundary } = useErrorBoundary()
-
   return (
     <StyledHero>
       <Container>
         <Row className='align-items-center text-center'>
-          <Col>
+          <Col md={6}>
             <h1 className='mb-3 display-3 title'>
               {name === null ? 'null' : name}
             </h1>
@@ -134,12 +165,25 @@ const Hero = ({ name }) => {
               <SocialLinks />
             </div>
           </Col>
-          <Col className='d-none d-md-block'>
-            <img
-              src={Logo}
-              alt='React Logo'
-              className='w-75 mx-auto hero-img'
-            />
+          <Col md={6} className='d-none d-md-block'>
+            <Fade
+              duration={2000}
+              defaultIndex={0}
+              arrows={false}
+              pauseOnHover={false}
+              easing='ease'
+              canSwipe={false}
+              cssClass='fade-class'
+            > {/* w-75 mx-auto */}
+              {images.map((image) => (
+                <img
+                  key={image.caption}
+                  src={image.url}
+                  alt={image.caption}
+                  className='hero-img'
+                />
+              ))}
+            </Fade>
           </Col>
         </Row>
         <Row className='align-items-end down-container'>

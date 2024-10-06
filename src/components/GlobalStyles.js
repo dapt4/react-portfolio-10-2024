@@ -1,4 +1,4 @@
-import { createGlobalStyle } from "styled-components";
+import { createGlobalStyle } from 'styled-components'
 
 const GlobalStyles = createGlobalStyle`
 /*
@@ -47,11 +47,12 @@ a:hover {
   font-size: 2.25rem;
   margin: 0 1rem;
   color: ${({ theme }) =>
-    theme.name === "light" ? "var(--bs-dark)" : "var(--bs-light)"};
+    theme.name === 'light' ? 'var(--bs-dark)' : 'var(--bs-light)'};
 
   &:hover {
-    color: ${({ theme }) =>
-      theme.name === "light" ? "var(--bs-light)" : "var(--bs-dark)"};
+    color: #ff8100;
+    /* color: ${({ theme }) =>
+      theme.name === 'light' ? 'var(--bs-light)' : 'var(--bs-dark)'};*/
   }
 }
 
@@ -74,6 +75,6 @@ a:hover {
     color: var(--bs-primary);
   }
   }
-`;
+`
 
-export default GlobalStyles;
+export default GlobalStyles

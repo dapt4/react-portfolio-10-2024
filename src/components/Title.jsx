@@ -1,8 +1,8 @@
-import React from "react";
+import React from 'react'
 // Styles
-import styled from "styled-components";
+import styled from 'styled-components'
 // State
-import PropTypes from "prop-types";
+import PropTypes from 'prop-types'
 
 // #region styled-components
 const TitleDiv = styled.div`
@@ -10,6 +10,10 @@ const TitleDiv = styled.div`
   max-width: 90vw;
   word-wrap: break-word;
   margin: 0.5rem 0;
+  
+  &.mb-40{
+    margin-bottom: 40px;
+  }
 
   .underline {
     height: 0.25rem;
@@ -18,33 +22,36 @@ const TitleDiv = styled.div`
     border-radius: 0.25rem;
     margin: 0 auto 0 auto;
     background: ${({ theme }) =>
-      theme.name === "light"
-        ? "linear-gradient(to right, var(--bs-primary), #D3D3D3)"
-        : "linear-gradient(to left, var(--bs-primary), var(--bs-light))"};
+      theme.name === 'light'
+        ? 'linear-gradient(to right, var(--bs-primary), #D3D3D3)'
+        : 'linear-gradient(to left, var(--bs-primary), var(--bs-light))'};
   }
-`;
+`
 // #endregion
 
 // #region component
 const propTypes = {
-  size: PropTypes.oneOf(["h1", "h2"]),
+  size: PropTypes.oneOf(['h1', 'h2']),
   text: PropTypes.string.isRequired,
-};
+  className: PropTypes.string
+}
 
-const Title = ({ size = "h1", text }) => {
+const Title = ({ size = 'h1', text, className }) => {
   return (
-    <TitleDiv>
-      {size === "h1" ? (
-        <h1 className="title">{text}</h1>
-      ) : (
-        <h2 className="title">{text}</h2>
-      )}
-      <div className="underline" />
+    <TitleDiv className={className}>
+      {size === 'h1'
+        ? (
+          <h1 className='title'>{text}</h1>
+          )
+        : (
+          <h2 className='title'>{text}</h2>
+          )}
+      <div className='underline' />
     </TitleDiv>
-  );
-};
+  )
+}
 
-Title.propTypes = propTypes;
+Title.propTypes = propTypes
 // #endregion
 
-export default Title;
+export default Title
