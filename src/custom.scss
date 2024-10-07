@@ -5,22 +5,42 @@ $blue: #ff8100;
 // Import Bootstrap and its default variables
 @import "~bootstrap/scss/bootstrap.scss";
 
-.darkColor {
-  path {
-    fill: #000; // lighten($color: #000000, $amount: 30)
-  }
-  &:has(g rect) {
-    g {
-      rect {
-        fill: #000;
-      }
-      path {
-        fill: #fff;
+.bc-1 {
+  border-color: #ff8100 !important;
+}
+
+[data-bs-theme=light] {
+  .icon-color {
+    path {
+      fill: #000; 
+    }
+    &:has(g rect) {
+      g {
+        rect {
+          fill: #000;
+        }
+        path {
+          fill: #fff;
+        }
       }
     }
   }
 }
 
-.bc-1 {
-  border-color: #ff8100 !important
+[data-bs-theme=dark] {
+  .icon-color {
+    path {
+      fill: #fff; 
+    }
+    &:has(g rect) {
+      g {
+        rect {
+          fill: #fff;
+        }
+        path {
+          fill: #000;
+        }
+      }
+    }
+  }
 }

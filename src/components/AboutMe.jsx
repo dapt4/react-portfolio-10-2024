@@ -6,13 +6,14 @@ import { Col, Container, Row } from 'react-bootstrap'
 import Title from './Title'
 
 const StyledAboutMe = styled.section`
+  padding: 0px;
+  margin: 0px;
   p {
     font-size: 1.25rem;
   }
-  .img {
+  img {
     width: 18rem;
     height: 18rem;
-    border-color: #ff8100;
   }
 `
 
@@ -43,8 +44,8 @@ const AboutMe = ({ avatarUrl, bio, moreInfo }) => {
                 alt='GitHub Avatar'
                 loading='lazy'
                 className='mx-auto rounded-circle border border-5 bc-1'
-                style={{ width: '15rem', height: '15rem' }}
-              /> {/* border-primary-subtle */}
+              />{' '}
+              {/* border-primary-subtle */}
             </Col>
           </Row>
         </Container>

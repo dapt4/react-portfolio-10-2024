@@ -7,6 +7,7 @@ import { Card } from 'react-bootstrap'
 
 const StyledCard = styled.div`
   .card {
+    justify-content: space-between;
     height: var(--card-height);
     border: var(--border);
     transition: all 0.2s ease-in-out;
@@ -18,7 +19,8 @@ const StyledCard = styled.div`
         : '0 3px 10px rgb(255 255 255 / 0.2)'};
 
     .card-img-top {
-      height: 50%;
+      margin: 30px;
+      height: 40%;
       object-fit: contain;
     }
 
@@ -32,12 +34,28 @@ const StyledCard = styled.div`
       }
     }
 
+    .card-body {
+      padding: 0px 16px;
+      // flex: 1 1 auto;
+      flex: unset;
+      .card-link {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 10px;
+      }
+    }
+
     .card-footer {
       border-top: var(--border);
       background: ${({ theme }) =>
         theme.name === 'light' ? '' : 'var(--bs-gray-dark)'};
 
       .card-link {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 10px;
         color: ${({ theme }) =>
           theme.name === 'light' ? 'var(--bs-dark)' : 'var(--bs-light)'};
 

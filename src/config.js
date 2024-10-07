@@ -1,5 +1,8 @@
 // Skills icons - https://icon-sets.iconify.design/
 import { Icon } from '@iconify/react'
+import react from './images/logo.png'
+import reactQuery from './images/react-query.png'
+import vue from './images/vue.png'
 import meFoto from './images/me.jpeg'
 
 // Navbar Logo image (add your image to the src/images directory and uncomment the line below to import your image)
@@ -52,78 +55,88 @@ export const moreInfo = `I’m passionate about using technology to build effici
 export const skillData = [
   {
     id: 1,
-    skill: <Icon icon='simple-icons:ionic' className='darkColor display-4' />,
-    name: 'Ionic'
-  },
-  {
-    id: 2,
-    skill: <Icon icon='logos:cordova' className='darkColor display-4' />,
-    name: 'Cordova'
-  },
-  {
-    id: 3,
-    skill: <Icon icon='simple-icons:capacitor' className='darkColor display-4' />,
-    name: 'Capacitor'
-  },
-  {
-    id: 4,
-    skill: <Icon icon='fa6-brands:js' className='darkColor display-4' />,
-    name: 'Javascript'
-  },
-  {
-    id: 5,
-    skill: <Icon icon='akar-icons:typescript-fill' className='darkColor display-4' />,
-    name: 'Typescript'
-  },
-  {
-    id: 6,
-    skill: <Icon icon='mdi:angular' className='darkColor display-4' />,
-    name: 'Angular'
-  },
-  {
-    id: 7,
-    skill: <Icon icon='mdi:react' className='darkColor display-4' />,
-    name: 'React'
-  },
-  {
-    id: 8,
-    skill: <Icon icon='carbon:logo-vue' className='darkColor display-4' />,
-    name: 'Vue'
-  },
-  {
-    id: 9,
-    skill: <Icon icon='simple-icons:python' className='darkColor display-4' />,
+    skill: <Icon icon='simple-icons:python' className='icon-color display-4' />,
     name: 'Python'
   },
   {
-    id: 10,
-    skill: <Icon icon='skill-icons:django' className='darkColor display-4' />,
+    id: 2,
+    skill: <Icon icon='skill-icons:django' className='icon-color display-4' />,
     name: 'Django'
   },
   {
-    id: 11,
-    skill: <Icon icon='skill-icons:nodejs-dark' className='darkColor display-4' />,
+    id: 3,
+    skill: <Icon icon='skill-icons:nodejs-dark' className='icon-color display-4' />,
     name: 'Nodejs'
   },
   {
-    id: 12,
-    skill: <Icon icon='devicon:express' className='darkColor display-4' />,
+    id: 4,
+    skill: <Icon icon='devicon:express' className='icon-color display-4' />,
     name: 'Express'
   },
   {
+    id: 5,
+    skill: <Icon icon='simple-icons:ionic' className='icon-color display-4' />,
+    name: 'Ionic'
+  },
+  {
+    id: 6,
+    skill: <Icon icon='logos:cordova' className='icon-color display-4' />,
+    name: 'Cordova'
+  },
+  {
+    id: 7,
+    skill: <Icon icon='skill-icons:sass' className='icon-color display-4' />,
+    name: 'Sass'
+  },
+  {
+    id: 8,
+    skill: <Icon icon='fa6-brands:js' className='icon-color display-4' />,
+    name: 'Javascript'
+  },
+  {
+    id: 9,
+    skill: <Icon icon='akar-icons:typescript-fill' className='icon-color display-4' />,
+    name: 'Typescript'
+  },
+  {
+    id: 10,
+    skill: <Icon icon='mdi:angular' className='icon-color display-4' />,
+    name: 'Angular'
+  },
+  {
+    id: 11,
+    skill: <Icon icon='mdi:react' className='icon-color display-4' />,
+    name: 'React'
+  },
+  {
+    id: 12,
+    skill: <Icon icon='carbon:logo-vue' className='icon-color display-4' />,
+    name: 'Vue'
+  },
+  {
     id: 13,
-    skill: <Icon icon='akar-icons:redux-fill' className='darkColor display-4' />,
+    skill: <Icon icon='akar-icons:redux-fill' className='icon-color display-4' />,
     name: 'Redux'
   },
   {
     id: 14,
-    skill: <Icon icon='bi:git' className='darkColor display-4' />,
+    skill: <Icon icon='bi:git' className='icon-color display-4' />,
     name: 'Git'
   },
   {
     id: 15,
-    skill: <Icon icon='fa6-brands:square-github' className='darkColor display-4' />,
+    skill: <Icon icon='fa6-brands:square-github' className='icon-color display-4' />,
     name: 'GitHub'
+  },
+  {
+    id: 16,
+    skill: <Icon icon='mdi:eslint' className='icon-color display-4' />,
+    name: 'Eslint'
+  },
+  {
+    id: 17,
+    skill: <Icon icon='lucide:ellipsis' className='icon-color display-4' />,
+    name: 'And more...'
   }
 ]
 
@@ -141,17 +154,17 @@ export const filteredProjects = ['react-hero-app', 'vue_sorting_hat', 'podcastap
 export const projectCardImages = [
   {
     name: 'react-hero-app',
-    image: GitHubImg,
+    image: react,
     homepage: 'https://astonishing-naiad-95d8b4.netlify.app/'
   },
   {
     name: 'vue_sorting_hat',
-    image: GitHubImg,
+    image: vue,
     homepage: 'https://vuesortinghat.netlify.app/'
   },
   {
     name: 'podcastapp',
-    image: GitHubImg,
+    image: reactQuery,
     homepage: 'https://podcastdapt4.netlify.app/'
   }
 ]
